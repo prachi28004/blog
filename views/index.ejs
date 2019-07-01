@@ -1,0 +1,32 @@
+<% include partials/header %>
+<div class="ui main text container">
+    <div class="ui huge header">RESTful BLog App</div>
+    <div class="ui top attached segment">
+        <div class="ui divided items">
+            <% b1.forEach(function(b3){ %>
+                <div class="item">
+                    <div class="image">
+                        <img src="<%= b3.image %>"/ ><!--I have not mensioned about the date and time-->
+                    </div>
+                    <div class="content">
+                        <a class="header" href="/blogs/<%= b3._id %>" ><%=b3.title%></a>
+                        <div class="meta">
+                            <h4>Date:2019</h4>
+                        </div>
+                        <div class="discription">
+                                <P><%= b3.body.slice(0,100) %>.....</P>
+                        </div>
+                        <div class="extra">
+                               <a class="ui floated basic violet button" href="/blogs/<%= b3._id %>">
+                                  Read More
+                                  <i class="right chevron icon"></i>
+                               </a>
+                        </div>
+                  </div>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+</div>
+
+<% include partials/footer %>

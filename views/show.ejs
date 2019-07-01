@@ -1,0 +1,20 @@
+<% include partials/header %>
+
+
+<div class="ui main text container segment">
+    <div class="ui huge header"><%= fblog.title %></div>
+    <div class="ui top attached ">
+          <div class="item">
+                <img class=" ui centered rounded image" src="<%= fblog.image %>" >
+          </div>
+          <div class="description">
+              <p><%=fblog.body %></p>
+          </div>
+          <a class="ui green basic button" href="/blogs/<%= fblog._id%>/edit" >Edit</a>
+          <form id="delete" action="/blogs/<%= fblog._id%>?_method=DELETE" method="POST">
+           <button class="ui red basic button" >Delete</button>
+          </form>
+    </div>
+</div>
+
+<% include partials/footer %>
